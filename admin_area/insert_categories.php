@@ -1,15 +1,24 @@
 <?php
     include('../includes/connect.php');
 
-    //select data from database
-    
     if(isset($_POST['insert_cat'])){
         $category_title = $_POST['cat_title'];
-        $insert_qry = "INSERT INTO categories (category_title) VALUES ('$category_title')";
-        $result = mysqli_query($con ,$insert_qry );
-        if($result){
-            echo "<script>alert('Category has been inserted successfully')</script>";
+
+        //select data from database
+        $select_qry = "SELECT * FROM categories WHERE category_title = '$category_title' ";
+        $result_select = mysqli_query($con ,$select_qry );
+        $no = mysqli_num_rows($result_select);
+        if($no>0){
+            echo "<script>alert('This category is present in the database')</script>";
         }
+        else{
+            $insert_qry = "INSERT INTO categories (category_title) VALUES ('$category_title')";
+            $result = mysqli_query($con ,$insert_qry );
+            if($result){
+                echo "<script>alert('Category has been inserted successfully')</script>";
+            }
+        }
+        
     }
 ?>
 
