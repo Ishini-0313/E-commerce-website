@@ -174,7 +174,6 @@
                                     <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
                                 </li>";
                         }
-                        
                     ?>
 
                 </ul>
@@ -184,21 +183,18 @@
                     <li class="nav-item bg-info">
                         <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
                     </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link text-light">Categorie1</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link text-light">Categorie2</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link text-light">Categorie3</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link text-light">Categorie4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-light">Categorie5</a>
-                    </li>
+                    
+                    <?php
+                        $select_categories = "SELECT * FROM categories";
+                        $result_categories = mysqli_query($con , $select_categories);
+                        while($row_data = mysqli_fetch_assoc($result_categories)){
+                            $category_title = $row_data['category_title'];
+                            $category_id = $row_data['category_id'];
+                            echo "<li class='nav-item '>
+                                    <a href='index.php?category=$category_id' class='nav-link text-light'>$category_title</a>
+                                </li>";
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
