@@ -28,8 +28,8 @@
 
             <!-- description -->
              <div class="form-outline mb-4 w-50 m-auto">
-                <label for="product_title" class="form-label">Product Title</label>
-                <input type="text" name="product_title" id="product_title" class="form-control" placeholder="Enter product title" autocomplete="off" required>
+                <label for="product_description" class="form-label">Product Description</label>
+                <input type="text" name="product_description" id="product_description" class="form-control" placeholder="Enter product description" autocomplete="off" required>
             </div>
         </form>
     </div>
