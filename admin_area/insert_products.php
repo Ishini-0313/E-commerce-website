@@ -40,13 +40,36 @@
 
             <!-- categories -->
             <div class="form-outline mb-4 w-50 m-auto">
-                <select name="product_categories" class="product_category" id="">
+                <select name="product_category" class="form-select" id="">
                     <option value="">Select a category</option>
                     <option value="">Select a category</option>
                     <option value="">Select a category</option>
                     <option value="">Select a category</option>
                     <option value="">Select a category</option>
                 </select>
+            </div>
+
+            <!-- brands -->
+            <div class="form-outline mb-4 w-50 m-auto">
+                <select name="product_brand" class="form-select" id="">
+                    <option value="">Select a brand</option>
+                    <option value="">Select a category</option>
+                    <option value="">Select a category</option>
+                    <option value="">Select a category</option>
+                    <option value="">Select a category</option>
+                </select>
+            </div>
+
+            <!-- image 1 -->
+            <div class="form-outline mb-4 w-50 m-auto">
+                <label for="product_keyword" class="form-label">Product Image 1</label>
+                <input type="file" name="product_image1" id="product_image1" class="form-control" required>
+            </div>
+
+            <!-- image 2 -->
+            <div class="form-outline mb-4 w-50 m-auto">
+                <label for="product_keyword" class="form-label">Product Image 2</label>
+                <input type="file" name="product_image2" id="product_image2" class="form-control" required>
             </div>
         </form>
     </div>
