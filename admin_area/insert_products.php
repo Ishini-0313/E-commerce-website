@@ -37,6 +37,17 @@
                 <label for="product_keyword" class="form-label">Product Keyword</label>
                 <input type="text" name="product_keyword" id="product_keyword" class="form-control" placeholder="Enter product keyword" autocomplete="off" required>
             </div>
+
+            <!-- categories -->
+            <div class="form-outline mb-4 w-50 m-auto">
+                <select name="product_categories" class="product_category" id="">
+                    <option value="">Select a category</option>
+                    <option value="">Select a category</option>
+                    <option value="">Select a category</option>
+                    <option value="">Select a category</option>
+                    <option value="">Select a category</option>
+                </select>
+            </div>
         </form>
     </div>
 </body>
