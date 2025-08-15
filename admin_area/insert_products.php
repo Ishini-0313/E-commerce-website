@@ -1,5 +1,33 @@
 <?php
     include("../includes/connect.php");
+
+    if(isset($_POST['insert_product'])){
+        $title = $_POST['product_title'];
+        $desc = $_POST['product_description'];
+        $keywords = $_POST['product_keyword'];
+        $category = $_POST['product_category'];
+        $brand = $_POST['product_brand'];
+        $price = $_POST['product_price'];
+
+        //accessing images
+        $image1 = $_POST['product_image1']['name'];
+        $image2 = $_POST['product_image2']['name'];
+        $image3 = $_POST['product_image3']['name'];
+
+        //accessing image temp name
+        $temp_image1 = $_POST['product_image1']['tmp_name'];
+        $temp_image2 = $_POST['product_image2']['tmp_name'];
+        $temp_image3 = $_POST['product_image3']['tmp_name'];
+
+        //checkin empty condition
+        if($title=='' or $desc=='' or $keywords=='' or $category=='' or $brand=='' or $price=='' or $image1=='' or $image2=='' or $image3==''){
+            echo "<script>alert('Please fill all the fields')</script>";
+            exit();
+        }
+        else{
+            
+        }
+    }
 ?>
 
 <!DOCTYPE html>
