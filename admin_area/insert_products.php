@@ -8,16 +8,17 @@
         $category = $_POST['product_category'];
         $brand = $_POST['product_brand'];
         $price = $_POST['product_price'];
+        $status = "true";
 
         //accessing images
-        $image1 = $_POST['product_image1']['name'];
-        $image2 = $_POST['product_image2']['name'];
-        $image3 = $_POST['product_image3']['name'];
+        $image1 = $_FILES['product_image1']['name'];
+        $image2 = $_FILES['product_image2']['name'];
+        $image3 = $_FILES['product_image3']['name'];
 
         //accessing image temp name
-        $temp_image1 = $_POST['product_image1']['tmp_name'];
-        $temp_image2 = $_POST['product_image2']['tmp_name'];
-        $temp_image3 = $_POST['product_image3']['tmp_name'];
+        $temp_image1 = $_FILES['product_image1']['tmp_name'];
+        $temp_image2 = $_FILES['product_image2']['tmp_name'];
+        $temp_image3 = $_FILES['product_image3']['tmp_name'];
 
         //checkin empty condition
         if($title=='' or $desc=='' or $keywords=='' or $category=='' or $brand=='' or $price=='' or $image1=='' or $image2=='' or $image3==''){
@@ -25,7 +26,19 @@
             exit();
         }
         else{
-            
+            move_uploaded_file($temp_image1 , "./product_images/$image1");
+            move_uploaded_file($temp_image2 , "./product_images/$image2");
+            move_uploaded_file($temp_image3 , "./product_images/$image3");
+
+            //insert query
+            $insert_qry = "INSERT INTO products (product_title,product_description,product_keywords,category_id,brand_id,product_image1,product_image2,product_image3,product_price,date,status) 
+            VALUES ('$title','$desc','$keywords','$category','$brand','$image1','$image2','$image3','$price',NOW(),'$status')";
+
+            $result = mysqli_query($con , $insert_qry);
+
+            if($result){
+                echo "<script>alert('Product inserted successfully')</script>";
+            }
         }
     }
 ?>
