@@ -79,7 +79,7 @@
         </div>
 
         <!-- fourth child -->
-        <div class="row mx-2">
+        <div class="row px-1">
             <div class="col-md-10">
                 <!-- products -->
                 <div class="row">
