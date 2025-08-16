@@ -83,77 +83,36 @@
             <div class="col-md-10">
                 <!-- products -->
                 <div class="row">
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="images/dairymilk.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                <a href="#" class="btn btn-info">Add to cart</a>
-                                <a href="#" class="btn btn-secondary">View More</a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="images/apple.webp" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                <a href="#" class="btn btn-info">Add to cart</a>
-                                <a href="#" class="btn btn-secondary">View More</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- fetching products -->
+                    <?php
+                        $select_qry = "SELECT * FROM products";
+                        $result = mysqli_query($con , $select_qry);
+                        while($row = mysqli_fetch_assoc($result)){
+                            $id = $row['product_id'];
+                            $title = $row['product_title'];
+                            $desc = $row['product_description'];
+                            //$keywords = $row['product_keywords'];
+                            $img1 = $row['product_image1'];
+                            $price = $row['product_price'];
+                            $cat_id = $row['category_id'];
+                            $br_id = $row['brand_id'];
 
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="images/capsicum.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                <a href="#" class="btn btn-info">Add to cart</a>
-                                <a href="#" class="btn btn-secondary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="images/capsicum.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                <a href="#" class="btn btn-info">Add to cart</a>
-                                <a href="#" class="btn btn-secondary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="images/capsicum.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                <a href="#" class="btn btn-info">Add to cart</a>
-                                <a href="#" class="btn btn-secondary">View More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-2">
-                        <div class="card">
-                            <img src="images/capsicum.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                <a href="#" class="btn btn-info">Add to cart</a>
-                                <a href="#" class="btn btn-secondary">View More</a>
-                            </div>
-                        </div>
-                    </div>
+                            echo "
+                                <div class='col-md-4 mb-2'>
+                                    <div class='card'>
+                                        <img src=$img1 class='card-img-top' alt='...'>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>Card title</h5>
+                                            <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                            <a href='#' class='btn btn-info'>Add to cart</a>
+                                            <a href='#' class='btn btn-secondary'>View More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            ";
+                        }
+                    ?>
                 </div>
             </div>
 
