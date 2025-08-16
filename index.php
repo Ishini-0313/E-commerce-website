@@ -86,7 +86,7 @@
 
                     <!-- fetching products -->
                     <?php
-                        $select_qry = "SELECT * FROM products";
+                        $select_qry = "SELECT * FROM products order by rand()";
                         $result = mysqli_query($con , $select_qry);
                         while($row = mysqli_fetch_assoc($result)){
                             $id = $row['product_id'];
