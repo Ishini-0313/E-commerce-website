@@ -100,15 +100,7 @@
                     </li>
 
                     <?php
-                        $select_brands = "SELECT * FROM brands";
-                        $result_brands = mysqli_query($con , $select_brands);
-                        while($row_data = mysqli_fetch_assoc($result_brands)){
-                            $brand_title = $row_data['brand_title'];
-                            $brand_id = $row_data['brand_id'];
-                            echo "<li class='nav-item '>
-                                    <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
-                                </li>";
-                        }
+                        getBrands();
                     ?>
 
                 </ul>
