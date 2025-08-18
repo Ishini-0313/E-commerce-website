@@ -159,6 +159,10 @@
             $search_data_value = $_GET['search_data'];
             $search_qry = "SELECT * FROM products WHERE product_keywords LIKE '%$search_data_value%'";
             $result = mysqli_query($con , $search_qry);
+            $no_of_rows = mysqli_num_rows($result);
+            if($no_of_rows==0){
+                echo "<h2>No result match. No product found on this category</h2>";
+            }
             while($row = mysqli_fetch_assoc($result)){
                 $id = $row['product_id'];
                 $title = $row['product_title'];
