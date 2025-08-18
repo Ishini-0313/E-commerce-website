@@ -46,8 +46,13 @@
         //condition to check isset or not
         if(isset($_GET['category'])){
             $category_id = $_GET['category'];
-                $select_qry = "SELECT * FROM products WHERE category_id = $category_id";
-                        $result = mysqli_query($con , $select_qry);
+            $select_qry = "SELECT * FROM products WHERE category_id = $category_id";
+            $result = mysqli_query($con , $select_qry);
+            $no_of_rows = mysqli_num_rows($result);
+            if($no_of_rows==0){
+                echo "<h2 class='text-center text-danger'>No stock for this category</h2>";
+            }
+
                         while($row = mysqli_fetch_assoc($result)){
                             $id = $row['product_id'];
                             $title = $row['product_title'];
