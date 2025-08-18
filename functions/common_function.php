@@ -161,7 +161,7 @@
             $result = mysqli_query($con , $search_qry);
             $no_of_rows = mysqli_num_rows($result);
             if($no_of_rows==0){
-                echo "<h2 class='text-center text-danger'>No result match. No product found on this category</h2>";
+                echo "<h2 class='text-center text-danger'>No result match. No product found on this category!</h2>";
             }
             while($row = mysqli_fetch_assoc($result)){
                 $id = $row['product_id'];
