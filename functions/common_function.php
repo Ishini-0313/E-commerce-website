@@ -39,7 +39,7 @@
         }
     }
 
-    //getting unique categories
+    //getting unique category
     function get_unique_categories(){
         global $con;
 
@@ -80,6 +80,49 @@
             
         }
     }
+
+    //getting unique brand
+    function get_unique_brands(){
+        global $con;
+
+        //condition to check isset or not
+        if(isset($_GET['brand'])){
+            $brand_id = $_GET['brand'];
+            $select_qry = "SELECT * FROM products WHERE brand_id = $brand_id";
+            $result = mysqli_query($con , $select_qry);
+            $no_of_rows = mysqli_num_rows($result);
+            if($no_of_rows==0){
+                echo "<h2 class='text-center text-danger'>No stock for this brand</h2>";
+            }
+
+                        while($row = mysqli_fetch_assoc($result)){
+                            $id = $row['product_id'];
+                            $title = $row['product_title'];
+                            $desc = $row['product_description'];
+                            //$keywords = $row['product_keywords'];
+                            $img1 = $row['product_image1'];
+                            $price = $row['product_price'];
+                            $cat_id = $row['category_id'];
+                            $br_id = $row['brand_id'];
+
+                            echo "
+                                <div class='col-md-4 mb-2'>
+                                    <div class='card'>
+                                        <img src='./admin_area/product_images/$img1' class='card-img-top' alt='$title '>
+                                        <div class='card-body'>
+                                            <h5 class='card-title'>$title</h5>
+                                            <p class='card-text'>$desc</p>
+                                            <a href='#' class='btn btn-info'>Add to cart</a>
+                                            <a href='#' class='btn btn-secondary'>View More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            ";
+                        }
+            
+        }
+    }
+
 
     //displaying brands inside nav
     function getBrands(){

@@ -89,6 +89,7 @@
                     <?php
                         getProducts();
                         get_unique_categories();
+                        get_unique_brands();
                     ?>
                 </div>
             </div>
