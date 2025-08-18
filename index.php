@@ -51,7 +51,7 @@
                                 <a class="nav-link" href="#">Total Price:100/-</a>
                             </li>
                     </ul>
-                    <form class="d-flex">
+                    <form class="d-flex" action="search_product.php" method="get">
                         <input class="form-control me-2" type="search" name="search_data" placeholder="Search" aria-label="Search"/>
                         <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
                     </form>
