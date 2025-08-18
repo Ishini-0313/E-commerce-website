@@ -51,10 +51,9 @@
                                 <a class="nav-link" href="#">Total Price:100/-</a>
                             </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <!-- <button class="btn btn-outline-light" type="submit">Search</button> -->
-                        <input type="submit" value="Search" class="btn btn-outline-light">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" name="search_data" placeholder="Search" aria-label="Search"/>
+                        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
                     </form>
                 </div>
             </div>
