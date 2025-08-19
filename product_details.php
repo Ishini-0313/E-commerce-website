@@ -86,10 +86,32 @@
                 <div class="row">
                     <div class="col-md-4">
                         <!-- card -->
+                        
+                            <div class='card'>
+                                <img src='./admin_area/product_images/$img1' class='card-img-top' alt='$title '>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>$title</h5>
+                                    <p class='card-text'>$desc</p>
+                                    <a href='#' class='btn btn-info'>Add to cart</a>
+                                    <a href='product_details.php?product_id=$id' class='btn btn-secondary'>View More</a>
+                                </div>
+                            </div>
+                        
                     </div>
 
                     <div class="col-md-8">
-                        <!-- related cards -->
+                        <!-- related images -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="text-center text-info mb-5">Related Products</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <img src='./admin_area/product_images/$img1' class='card-img-top' alt='$title '>
+                            </div>
+                            <div class="col-md-6">
+                                <img src='./admin_area/product_images/$img1' class='card-img-top' alt='$title '>
+                            </div>
+                        </div>
                     </div>
                     <!-- fetching products -->
                     <?php
