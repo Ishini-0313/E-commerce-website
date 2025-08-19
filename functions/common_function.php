@@ -9,7 +9,7 @@
         //condition to check isset or not
         if(!isset($_GET['category'])){
             if(!isset($_GET['brand'])){
-                $select_qry = "SELECT * FROM products order by rand() LIMIT 0,9";
+                $select_qry = "SELECT * FROM products order by rand() LIMIT 0,3";
                         $result = mysqli_query($con , $select_qry);
                         while($row = mysqli_fetch_assoc($result)){
                             $id = $row['product_id'];
