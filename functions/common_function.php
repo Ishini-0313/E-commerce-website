@@ -235,7 +235,7 @@
             if(!isset($_GET['category'])){
                 if(!isset($_GET['brand'])){
                     $product_id = $_GET['product_id'];
-                    $select_qry = "SELECT * FROM products order by rand() where product_id=$product_id";
+                    $select_qry = "SELECT * FROM products  where product_id=$product_id order by rand()";
                     $result = mysqli_query($con , $select_qry);
                     while($row = mysqli_fetch_assoc($result)){
                         $id = $row['product_id'];
@@ -269,10 +269,10 @@
                                         <h4 class='text-center text-info mb-5'>Related Products</h4>
                                     </div>
                                     <div class='col-md-6'>
-                                        <img src='./admin_area/product_images/$img1' class='card-img-top' alt='$title '>
+                                        <img src='./admin_area/product_images/$img2' class='card-img-top' alt='$title '>
                                     </div>
                                     <div class='col-md-6'>
-                                        <img src='./admin_area/product_images/$img1' class='card-img-top' alt='$title '>
+                                        <img src='./admin_area/product_images/$img3' class='card-img-top' alt='$title '>
                                     </div>
                                 </div>
                             </div>
