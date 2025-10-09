@@ -257,7 +257,7 @@
                                         <h5 class='card-title'>$title</h5>
                                         <p class='card-text'>$desc</p>
                                         <a href='index.php?add_to_cart=$id' class='btn btn-info'>Add to cart</a>
-                                        <a href='product_details.php?product_id=$id' class='btn btn-secondary'>View More</a>
+                                        <a href='index.php' class='btn btn-secondary'>Go Home</a>
                                     </div>
                                 </div>
                             </div>
