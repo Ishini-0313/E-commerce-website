@@ -90,8 +90,8 @@
                         getProducts();
                         get_unique_categories();
                         get_unique_brands();
-                        // $client_ip = get_client_ip();
-                        // echo "Client IP Address: " . $client_ip;
+                        //$client_ip = get_client_ip();
+                        //echo "Client IP Address: " . $client_ip;
                     ?>
                 </div>
             </div>
