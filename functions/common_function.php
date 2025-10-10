@@ -331,4 +331,24 @@
             }
         }
     }
+
+    //function to get cart item numbers
+    function cart_item(){
+        if(isset($_GET['add_to_cart'])){
+            global $con;
+            $ip = get_client_ip();
+            $select_query = "select * from cart_details where ip_address = '$ip'";
+            $result = mysqli_query($con,$select_query);
+            $no_of_items= mysqli_num_rows($result);
+        }
+        else{
+            global $con;
+            $ip = get_client_ip();
+            $select_query = "select * from cart_details where ip_address = '$ip'";
+            $result = mysqli_query($con,$select_query);
+            $no_of_items= mysqli_num_rows($result);
+        }
+        echo "$no_of_items";
+    }
+    
 ?>
