@@ -222,7 +222,7 @@
                                 <p class='card-text'>$desc</p>
                                 <p class='card-text'>Price: $price/-</p>
                                 <a href='index.php?add_to_cart=$id' class='btn btn-info'>Add to cart</a>
-                                <a href='#' class='btn btn-secondary'>View More</a>
+                                <a href='product_details.php?product_id=$id' class='btn btn-secondary'>View More</a>
                             </div>
                         </div>
                     </div>
