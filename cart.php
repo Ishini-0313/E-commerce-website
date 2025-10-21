@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ecommerce Website using PHP and MySql</title>
+    <title>Ecommerce Website-Cart Details</title>
 
     <!--  bootstrap css link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
@@ -46,15 +46,8 @@
                             </li>  
                             <li class="nav-item">
                                 <a class="nav-link" href="cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><sup><?php cart_item();?></sup></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Total Price: <?php total_cart_price();?>/-</a>
-                            </li>
-                    </ul>
-                    <form class="d-flex" action="search_product.php" method="get">
-                        <input class="form-control me-2" type="search" name="search_data" placeholder="Search" aria-label="Search"/>
-                        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
-                    </form>
+                            </li>                           
+                    </ul>                   
                 </div>
             </div>
         </nav>
@@ -83,50 +76,6 @@
                 Communication is at the heart of e-commerce and community
             </p>
         </div>
-
-        <!-- fourth child -->
-        <div class="row px-1">
-            <div class="col-md-10">
-                <!-- products -->
-                <div class="row">
-
-                    <!-- fetching products -->
-                    <?php
-                        getProducts();
-                        get_unique_categories();
-                        get_unique_brands();
-                        //$client_ip = get_client_ip();
-                        //echo "Client IP Address: " . $client_ip;
-                    ?>
-                </div>
-            </div>
-
-            <div class="col-md-2 bg-secondary p-0">
-                <!-- brands to be displayed -->
-                <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h4>Delivery Brands</h4></a>
-                    </li>
-
-                    <?php
-                        getBrands();
-                    ?>
-
-                </ul>
-
-                <!-- categories to be displayed -->
-                 <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
-                    </li>
-                    
-                    <?php
-                        getCategories();
-                    ?>
-                </ul>
-            </div>
-        </div>
-
 
         <!-- last child -->
         <!-- include footer -->
