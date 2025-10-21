@@ -77,6 +77,22 @@
             </p>
         </div>
 
+        <!-- fourth child - table -->
+        <div class="container">
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Product Title</th>
+                        <th>Product Image</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Remove</th>
+                        <th>Options</th>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
         <!-- last child -->
         <!-- include footer -->
         <?php
