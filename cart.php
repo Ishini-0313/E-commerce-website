@@ -19,6 +19,12 @@
 
     <!-- css file -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .cart_img{
+            width: 80px;
+            height: 80px;
+        }
+    </style>
 </head>
 <body>
     <!-- nav bar -->
@@ -80,7 +86,7 @@
         <!-- fourth child - table -->
         <div class="container">
             <div class="row">
-                <table class="table table-bordered">
+                <table class="table table-bordered text-center">
                     <thead>
                         <th>Product Title</th>
                         <th>Product Image</th>
@@ -89,7 +95,24 @@
                         <th>Remove</th>
                         <th>Options</th>
                     </thead>
+                    <tbody>
+                        <td>Apple</td>
+                        <td><img src="./images/apple1.jpg" alt="" class="cart_img"></td>
+                        <td><input type="text"></td>
+                        <td>100</td>
+                        <td><input type="checkbox"></td>
+                        <td>
+                            <button class="px-3 py-2 bg-info border-0 mx-3">Update</button>
+                            <button class="px-3 py-2 bg-info border-0 mx-3">Remove</button>
+                        </td>
+                    </tbody>
                 </table>
+                <!-- subtotal -->
+                <div class="d-flex mb-5">
+                    <h4  class="px-3">Subtotal: <strong class="text-info">5000/-</strong></h4>
+                    <a href="index.php"><button class="px-3 py-2 bg-info border-0 mx-3">Continue Shopping</button></a>
+                    <a href="#"><button class="px-3 py-2 bg-secondary border-0 text-light">Checkout</button></a>
+                </div>
             </div>
         </div>
 

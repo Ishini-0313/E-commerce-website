@@ -24,3 +24,8 @@
     position: absolute; // relative to the body 
     bottom: 0;
 } */
+
+.cart_img{
+    width: 50px;
+    height: 50px;
+}
