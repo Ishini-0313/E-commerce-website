@@ -149,9 +149,20 @@
                     </table>
                     <!-- subtotal -->
                     <div class="d-flex mb-5">
-                        <h4  class="px-3">Subtotal: <strong class="text-info"><?php echo $total_price?>/-</strong></h4>
-                        <a href="index.php"><button class="px-3 py-2 bg-info border-0 mx-3">Continue Shopping</button></a>
-                        <a href="#"><button class="px-3 py-2 bg-secondary border-0 text-light">Checkout</button></a>
+                        <?php
+                            $ip = get_client_ip();
+                            $total_price = 0;
+                            $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$ip'";
+                            $result = mysqli_query($con, $cart_query);
+                            $result_count = mysqli_num_rows($result);
+                            if($result_count>0){
+                                echo "<h4  class='px-3'>Subtotal: <strong class='text-info'>";
+                                echo $total_price;echo "/-</strong></h4>
+                                <a href='index.php'><button class='px-3 py-2 bg-info border-0 mx-3'>Continue Shopping</button></a>
+                                <a href='#'><button class='px-3 py-2 bg-secondary border-0 text-light'>Checkout</button></a>";
+                            }
+                        ?>
+                        
                     </div>
                 </form>
             </div>
