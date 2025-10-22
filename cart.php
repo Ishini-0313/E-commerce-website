@@ -89,15 +89,7 @@
             <div class="row">
                 <form action="" method="post">
                     <table class="table table-bordered text-center">
-                        <thead>
-                            <th>Product Title</th>
-                            <th>Product Image</th>
-                            <th>Quantity</th>
-                            <th>Total Price</th>
-                            <th>Remove</th>
-                            <th>Options</th>
-                        </thead>
-                        <tbody>
+                        
                             <!-- php code to display dynamic data -->
                             <?php
                                 global $con;
@@ -105,6 +97,17 @@
                                 $total_price = 0;
                                 $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$ip'";
                                 $result = mysqli_query($con, $cart_query);
+                                $result_count = mysqli_num_rows($result);
+                                if($result_count>0){
+                                    echo "<thead>
+                                            <th>Product Title</th>
+                                            <th>Product Image</th>
+                                            <th>Quantity</th>
+                                            <th>Total Price</th>
+                                            <th>Remove</th>
+                                            <th>Options</th>
+                                        </thead>
+                                    <tbody>";
                                 while($row = mysqli_fetch_array($result)){
                                     $product_id = $row['product_id'];
                                     $select_product = "SELECT * FROM products WHERE product_id = $product_id";
@@ -137,7 +140,11 @@
                                     <input type="submit" value="Remove Cart" class="px-3 py-2 bg-info border-0 mx-3" name="remove_cart">
                                 </td>
                             </tr>
-                            <?php }}?>
+                            <?php }}} 
+                                else{
+                                    echo "<h2 class='text-center text-danger'>Cart is empty</h2>";
+                                }
+                            ?>
                         </tbody>
                     </table>
                     <!-- subtotal -->
