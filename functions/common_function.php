@@ -330,7 +330,7 @@
                 echo "<script>window.open('index.php','_self')</script>";
             }
             else{
-                $insert_qry = "insert into cart_details(product_id,ip_address,quantity)values ('$product_id','$ip',0)";
+                $insert_qry = "insert into cart_details(product_id,ip_address,quantity)values ('$product_id','$ip',1)";
                 $result = mysqli_query($con,$insert_qry);
                 echo "<script>alert('Item is added to cart')</script>";
                 echo "<script>window.open('index.php','_self')</script>";
