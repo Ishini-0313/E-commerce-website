@@ -158,11 +158,15 @@
                             if($result_count>0){
                                 echo "<h4  class='px-3'>Subtotal: <strong class='text-info'>";
                                 echo $total_price;echo "/-</strong></h4>
-                                <a href='index.php'><button class='px-3 py-2 bg-info border-0 mx-3'>Continue Shopping</button></a>
-                                <a href='#'><button class='px-3 py-2 bg-secondary border-0 text-light'>Checkout</button></a>";
+                                <a href='index.php'><input type='submit' class='text-center px-3 py-2 bg-info border-0 mx-3' name='countinue' value='Continue Shopping'></a>
+                                <a href='#'><button class='px-3 py-2 bg-secondary border-0 text-light'>Checkout</a>";
                             }
                             else{
-                                echo "<a href='index.php'><button class='px-3 py-2 bg-info border-0 mx-3'>Continue Shopping</button></a>";
+                                echo "<a href='index.php'><input type='submit' class='px-3 py-2 bg-info border-0 mx-3 text-center' name='countinue' value='Continue Shopping'></a>";
+                            }
+
+                            if(isset($_POST['countinue'])){
+                                echo "<script>window.open('index.php','_self');</script>";
                             }
                         ?>
                         
