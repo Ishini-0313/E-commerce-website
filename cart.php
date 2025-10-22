@@ -119,7 +119,7 @@
                             ?>
                             <tr>
                                 <td><?php echo $product_title?></td>
-                                <td><img src="./images/<?php echo $product_image?>" alt="" class="cart_img"></td>
+                                <td><img src="./admin_area/product_images/<?php echo $product_image?>" alt="" class="cart_img"></td>
                                 <td><input type="text" name="qty" class="form-input w-50"></td>
                                 <?php
                                     $ip = get_client_ip();
