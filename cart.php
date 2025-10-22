@@ -23,6 +23,7 @@
         .cart_img{
             width: 80px;
             height: 80px;
+            object-fit:contain;
         }
     </style>
 </head>
@@ -96,20 +97,42 @@
                         <th>Options</th>
                     </thead>
                     <tbody>
-                        <td>Apple</td>
-                        <td><img src="./images/apple1.jpg" alt="" class="cart_img"></td>
-                        <td><input type="text"></td>
-                        <td>100</td>
-                        <td><input type="checkbox"></td>
-                        <td>
-                            <button class="px-3 py-2 bg-info border-0 mx-3">Update</button>
-                            <button class="px-3 py-2 bg-info border-0 mx-3">Remove</button>
-                        </td>
+                        <!-- php code to display dynamic data -->
+                        <?php
+                            global $con;
+                            $ip = get_client_ip();
+                            $total_price = 0;
+                            $cart_query = "SELECT * FROM cart_details WHERE ip_address = '$ip'";
+                            $result = mysqli_query($con, $cart_query);
+                            while($row = mysqli_fetch_array($result)){
+                                $product_id = $row['product_id'];
+                                $select_product = "SELECT * FROM products WHERE product_id = $product_id";
+                                $result_product = mysqli_query($con, $select_product);
+                                while($row_product_price = mysqli_fetch_array($result_product)){
+                                    $product_price = array($row_product_price['product_price']);
+                                    $price = $row_product_price['product_price'];
+                                    $product_title = $row_product_price['product_title'];
+                                    $product_image = $row_product_price['product_image1'];
+                                    $products_value = array_sum($product_price);
+                                    $total_price += $products_value;
+                        ?>
+                        <tr>
+                            <td><?php echo $product_title?></td>
+                            <td><img src="./images/<?php echo $product_image?>" alt="" class="cart_img"></td>
+                            <td><input type="text" class="form-input w-50"></td>
+                            <td><?php echo $price?>/-</td>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <button class="px-3 py-2 bg-info border-0 mx-3">Update</button>
+                                <button class="px-3 py-2 bg-info border-0 mx-3">Remove</button>
+                            </td>
+                        </tr>
+                        <?php }}?>
                     </tbody>
                 </table>
                 <!-- subtotal -->
                 <div class="d-flex mb-5">
-                    <h4  class="px-3">Subtotal: <strong class="text-info">5000/-</strong></h4>
+                    <h4  class="px-3">Subtotal: <strong class="text-info"><?php echo $total_price?>/-</strong></h4>
                     <a href="index.php"><button class="px-3 py-2 bg-info border-0 mx-3">Continue Shopping</button></a>
                     <a href="#"><button class="px-3 py-2 bg-secondary border-0 text-light">Checkout</button></a>
                 </div>
