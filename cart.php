@@ -161,6 +161,9 @@
                                 <a href='index.php'><button class='px-3 py-2 bg-info border-0 mx-3'>Continue Shopping</button></a>
                                 <a href='#'><button class='px-3 py-2 bg-secondary border-0 text-light'>Checkout</button></a>";
                             }
+                            else{
+                                echo "<a href='index.php'><button class='px-3 py-2 bg-info border-0 mx-3'>Continue Shopping</button></a>";
+                            }
                         ?>
                         
                     </div>
