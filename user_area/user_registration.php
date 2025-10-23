@@ -56,6 +56,10 @@
                         <label for="contact" class="form-label">Contact</label>
                         <input type="text" id="contact" class="form-control" placeholder="Enter your contact number" autocomplete="off" required="required" name="contact">
                     </div>
+                    <!-- register btn -->
+                    <div class="mt-4 pt-2">
+                        <input type="submit" value="Register" class="bg-info border-0 py-2 px-3" name="user_register">
+                    </div>
                 </form>
             </div>
         </div>
