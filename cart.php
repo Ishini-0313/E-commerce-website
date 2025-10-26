@@ -159,7 +159,7 @@
                                 echo "<h4  class='px-3'>Subtotal: <strong class='text-info'>";
                                 echo $total_price;echo "/-</strong></h4>
                                 <a href='index.php'><input type='submit' class='text-center px-3 py-2 bg-info border-0 mx-3' name='countinue' value='Continue Shopping'></a>
-                                <button class='px-3 py-2 bg-secondary border-0 text-light'><a href='checkout.php' class='text-light text-decoration-none'>Checkout</a></button>";
+                                <button class='px-3 py-2 bg-secondary border-0 text-light'><a href='./user_area/checkout.php' class='text-light text-decoration-none'>Checkout</a></button>";
                             }
                             else{
                                 echo "<a href='index.php'><input type='submit' class='px-3 py-2 bg-info border-0 mx-3 text-center' name='countinue' value='Continue Shopping'></a>";
