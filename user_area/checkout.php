@@ -1,5 +1,5 @@
 <?php
-    include('includes/connect.php');
+    include('../includes/connect.php');
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,7 @@
                 <div class="row">
                     <?php
                         if(!isset($_SESSION['username'])){
-                            include('user_area/user_login.php');
+                            include('user_login.php');
                         }
                         else{
                             include('payment.php');
@@ -91,7 +91,7 @@
         <!-- last child -->
         <!-- include footer -->
         <?php
-            include('includes/footer.php');
+            include('../includes/footer.php');
         ?>
     </div>
 
