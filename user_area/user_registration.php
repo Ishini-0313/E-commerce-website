@@ -78,5 +78,8 @@
         $confirm_pwd = $_POST['confirm_pwd'];
         $address = $_POST['address'];
         $contact = $_POST['contact'];
+        $user_image = $_FILES['user_image']['name'];
+        $user_image_temp = $_FILES['user_image']['temp_name'];
+        $user_ip = get_client_ip();
     }
 ?>
