@@ -68,3 +68,15 @@
     </div>
 </body>
 </html>
+
+<!-- php code -->
+<?php
+    if(isset($_POST['user_register'])){
+        $user_name = $_POST['user_name'];
+        $user_email = $_POST['user_email'];
+        $user_pwd = $_POST['user_pwd'];
+        $confirm_pwd = $_POST['confirm_pwd'];
+        $address = $_POST['address'];
+        $contact = $_POST['contact'];
+    }
+?>
