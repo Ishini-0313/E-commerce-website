@@ -1,5 +1,5 @@
 <?php
-    //connecting database
+    
     
 
     //getting products
