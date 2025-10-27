@@ -94,6 +94,8 @@
 
         if($sql_execute){
             echo "<script>alert('Data inserted successfully')</script>";
-        }
+        }else{
+            die(mysqli_error($con));
+        }    
     }
 ?>
