@@ -1,6 +1,6 @@
 <?php
-    //connecting database
-    include('./includes/connect.php');
+    
+    
 
     //getting products
     function getProducts(){
