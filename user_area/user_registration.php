@@ -82,7 +82,7 @@
         $address = $_POST['address'];
         $contact = $_POST['contact'];
         $user_image = $_FILES['user_image']['name'];
-        $user_image_temp = $_FILES['user_image']['temp_name'];
+        $user_image_temp = $_FILES['user_image']['tmp_name'];
         $user_ip = get_client_ip();
 
 
@@ -90,8 +90,11 @@
         $select_qry = "SELECT * FROM user_table WHERE user_name = '$user_name' OR user_email='$user_email'";
         $result = mysqli_query($con,$select_qry);
         $rows = mysqli_num_rows($result);
-        if($result>0){
+        if($rows>0){
             echo "<script>alert('Username  or email already exists')</script>";
+        }
+        elseif ($user_pwd!=$confirm_pwd) {
+            echo "<script>alert('Passwords do not match')</script>";
         }
         else{
             //insert query
