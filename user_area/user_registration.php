@@ -79,25 +79,29 @@
         $user_email = $_POST['user_email'];
         $user_pwd = $_POST['user_pwd'];
         $confirm_pwd = $_POST['confirm_pwd'];
+        $hash_pwd = password_hash($user_pwd,PASSWORD_DEFAULT);
         $address = $_POST['address'];
         $contact = $_POST['contact'];
         $user_image = $_FILES['user_image']['name'];
-        $user_image_temp = $_FILES['user_image']['temp_name'];
+        $user_image_temp = $_FILES['user_image']['tmp_name'];
         $user_ip = get_client_ip();
 
 
         //select query
-        $select_qry = "SELECT * FROM user_table WHERE user_name = '$user_name'";
+        $select_qry = "SELECT * FROM user_table WHERE user_name = '$user_name' OR user_email='$user_email'";
         $result = mysqli_query($con,$select_qry);
         $rows = mysqli_num_rows($result);
-        if($result>0){
-            echo "<script>alert('Username already exists')</script>";
+        if($rows>0){
+            echo "<script>alert('Username  or email already exists')</script>";
+        }
+        elseif ($user_pwd!=$confirm_pwd) {
+            echo "<script>alert('Passwords do not match')</script>";
         }
         else{
             //insert query
             move_uploaded_file($user_image_temp,"./user_images/$user_image");
             $insert_qry = "INSERT INTO user_table (user_name,user_email,user_password,user_image,user_ip,user_address,user_mobile) VALUES 
-            ('$user_name','$user_email','$user_pwd','$user_image','$user_ip','$address','$contact')";
+            ('$user_name','$user_email','$hash_pwd','$user_image','$user_ip','$address','$contact')";
 
             $sql_execute = mysqli_query($con,$insert_qry);
         } 
