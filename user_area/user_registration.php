@@ -79,6 +79,7 @@
         $user_email = $_POST['user_email'];
         $user_pwd = $_POST['user_pwd'];
         $confirm_pwd = $_POST['confirm_pwd'];
+        $hash_pwd = password_hash($user_pwd,PASSWORD_DEFAULT);
         $address = $_POST['address'];
         $contact = $_POST['contact'];
         $user_image = $_FILES['user_image']['name'];
@@ -100,7 +101,7 @@
             //insert query
             move_uploaded_file($user_image_temp,"./user_images/$user_image");
             $insert_qry = "INSERT INTO user_table (user_name,user_email,user_password,user_image,user_ip,user_address,user_mobile) VALUES 
-            ('$user_name','$user_email','$user_pwd','$user_image','$user_ip','$address','$contact')";
+            ('$user_name','$user_email','$hash_pwd','$user_image','$user_ip','$address','$contact')";
 
             $sql_execute = mysqli_query($con,$insert_qry);
         } 
