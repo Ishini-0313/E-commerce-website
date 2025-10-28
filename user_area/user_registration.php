@@ -87,11 +87,11 @@
 
 
         //select query
-        $select_qry = "SELECT * FROM user_table WHERE user_name = '$user_name'";
+        $select_qry = "SELECT * FROM user_table WHERE user_name = '$user_name' OR user_email='$user_email'";
         $result = mysqli_query($con,$select_qry);
         $rows = mysqli_num_rows($result);
         if($result>0){
-            echo "<script>alert('Username already exists')</script>";
+            echo "<script>alert('Username  or email already exists')</script>";
         }
         else{
             //insert query
