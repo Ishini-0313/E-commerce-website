@@ -84,5 +84,22 @@
         $user_image = $_FILES['user_image']['name'];
         $user_image_temp = $_FILES['user_image']['temp_name'];
         $user_ip = get_client_ip();
+
+
+        //select query
+        $select_qry = "SELECT * FROM user_table WHERE user_name = '$user_name'";
+        $result = mysqli_query($con,$select_qry);
+        $rows = mysqli_num_rows($result);
+        if($result>0){
+            echo "<script>alert('Username already exists')</script>";
+        }
+        else{
+            //insert query
+            move_uploaded_file($user_image_temp,"./user_images/$user_image");
+            $insert_qry = "INSERT INTO user_table (user_name,user_email,user_password,user_image,user_ip,user_address,user_mobile) VALUES 
+            ('$user_name','$user_email','$user_pwd','$user_image','$user_ip','$address','$contact')";
+
+            $sql_execute = mysqli_query($con,$insert_qry);
+        } 
     }
 ?>
