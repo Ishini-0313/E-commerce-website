@@ -105,5 +105,18 @@
 
             $sql_execute = mysqli_query($con,$insert_qry);
         } 
+
+        //selecting cart items
+        $select_cart_items = "SELECT * FROM cart_details WHERE ip_address = '$user_ip'";
+        $select_cart_items_res = mysqli_query($con,$select_cart_items);
+        $cart_rows = mysqli_num_rows($select_cart_items_res);
+        if($cart_rows>0){
+            $_SESSION['username']=$user_name;
+            echo "<script>alert('You have items in your cart')</script>";
+            echo "<script>window.open('checkout.php','_self')</script>";
+        }
+        else{
+            echo "<script>window.open('../index.php','_self')</script>";
+        }
     }
 ?>
