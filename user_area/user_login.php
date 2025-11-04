@@ -52,6 +52,18 @@
     if(isset($_POST['user_login'])){
         $user_name = $_POST['user_name'];
         $pwd = $_POST['user_pwd'];
-        
+        $select_qry = "select * from user_table where user_name = '$user_name'";
+        $result = mysqli_query($con, $select_qry);
+        $row_count = mysqli_num_rows($result);
+        $row_data = mysqli_fetch_assoc($result);
+        if($row_count > 0){
+            if(password_verify($pwd, $row_data['user_password'])){
+                echo "<script>alert('Login Successful')</script>";
+            }else{
+                echo "<script>alert('Invalid Credentials')</script>";
+            }
+        }else{
+            echo "<script>alert('Invalid Credentials')</script>";
+        }
     }
 ?>
