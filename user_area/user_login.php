@@ -12,6 +12,12 @@
 
     <!-- css file -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body{
+            overflow-x:hidden;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid my-3">
@@ -41,3 +47,11 @@
         </div>
     </body>
 </html>
+
+<?php
+    if(isset($_POST['user_login'])){
+        $user_name = $_POST['user_name'];
+        $pwd = $_POST['user_pwd'];
+        
+    }
+?>
