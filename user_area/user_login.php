@@ -69,11 +69,14 @@
         $row_count_cart = mysqli_num_rows($result_cart);
 
         if($row_count > 0){
+            $_SESSION['username']=$user_name;
             if(password_verify($pwd, $row_data['user_password'])){
                 if($row_count==1 and $row_count_cart==0){
+                    $_SESSION['username']=$user_name;
                     echo "<script>alert('Login Successful')</script>";
                     echo "<script>window.open('profile.php','_self')</script>";
                 }else{
+                    $_SESSION['username']=$user_name;
                     echo "<script>alert('Login Successful')</script>";
                     echo "<script>window.open('payment.php','_self')</script>";
                 }
