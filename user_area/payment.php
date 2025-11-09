@@ -1,3 +1,8 @@
+<?php
+    include('../includes/connect.php');
+    include('../functions/common_function.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +27,9 @@
 
 </head>
 <body>
+    <!-- php code to access the user id -->
+     <?php
+     ?>
     <div class="container">
         <h2 class="text-center text-info">
             Payment Options
