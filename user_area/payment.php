@@ -21,7 +21,9 @@
 
     <style>
         img{
-            width: 100%;
+            width: 90%;
+            margin:auto;
+            display:block;
         }
     </style>
 
