@@ -19,6 +19,13 @@
 
     <!-- css file -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .logo{
+            width:4%;
+            height:4%;
+        }
+    </style>
 </head>
 <body>
     <!-- nav bar -->
@@ -26,7 +33,7 @@
         <!-- first child -->
         <nav class="navbar navbar-expand-lg navbar-liht bg-info">
             <div class="container-fluid">
-                <img src="./images/pngtree-colorful-shopping-cart-logo-vector-png-image_6969977.png" alt="" class="logo">
+                <img src="../images/pngtree-colorful-shopping-cart-logo-vector-png-image_6969977.png" alt="" class="logo">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
