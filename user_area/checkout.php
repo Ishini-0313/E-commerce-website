@@ -19,6 +19,13 @@
 
     <!-- css file -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .logo{
+            width:4%;
+            height:4%;
+        }
+    </style>
 </head>
 <body>
     <!-- nav bar -->

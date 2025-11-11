@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        img{
+        .payment_img{
             width: 90%;
             margin:auto;
             display:block;
