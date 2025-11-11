@@ -43,7 +43,7 @@
         </h2>
         <div class="row d-flex justify-content-center align-items-center my-5">
             <div class="col-md-6">
-                <a href="https://www.paypal.com"><img src="../images/upi.jpeg" target="_blank" alt=""></a>
+                <a href="https://www.paypal.com"><img src="../images/upi.jpeg" target="_blank" alt=""class="payment_img"></a>
             </div>
             <div class="col-md-6">
                 <a href="order.php?user_id=<?php echo $user_id?>"><h2 class="text-center">Pay Offline</h2></a>
