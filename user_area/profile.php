@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <!-- nav bar -->
@@ -40,7 +40,7 @@
                                 <a class="nav-link" href="../display_all.php">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="user_registration.php">Register</a>
+                                <a class="nav-link" href="profile.php">My Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contacts</a>
@@ -52,7 +52,7 @@
                                 <a class="nav-link" href="#">Total Price: <?php total_cart_price();?>/-</a>
                             </li>
                     </ul>
-                    <form class="d-flex" action="search_product.php" method="get">
+                    <form class="d-flex" action="../search_product.php" method="get">
                         <input class="form-control me-2" type="search" name="search_data" placeholder="Search" aria-label="Search"/>
                         <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
                     </form>
@@ -108,7 +108,15 @@
         </div>
 
         <!-- fourth child -->
-        
+        <div class="row">
+            <div class="col-md-2 p-0">
+                    <ul class="navbar-nav bg-secondary text-center">
+                        <li class="nav-item bg-info"><a class="nav-link text-light" href="#"><h4>Your Profile</h4></a></li>
+                        <li class="nav-item bg-info"><img src="../images/apple1.jpg" alt=""></li>
+                    </ul>
+            </div>
+            <div class="col-md-10"></div>
+        </div>
 
 
         <!-- last child -->
