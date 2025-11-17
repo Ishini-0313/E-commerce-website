@@ -108,53 +108,13 @@
         </div>
 
         <!-- fourth child -->
-        <div class="row px-1">
-            <div class="col-md-10">
-                <!-- products -->
-                <div class="row">
-
-                    <!-- fetching products -->
-                    <?php
-                        getProducts();
-                        get_unique_categories();
-                        get_unique_brands();
-                        //$client_ip = get_client_ip();
-                        //echo "Client IP Address: " . $client_ip;
-                    ?>
-                </div>
-            </div>
-
-            <div class="col-md-2 bg-secondary p-0">
-                <!-- brands to be displayed -->
-                <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h4>Delivery Brands</h4></a>
-                    </li>
-
-                    <?php
-                        getBrands();
-                    ?>
-
-                </ul>
-
-                <!-- categories to be displayed -->
-                 <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
-                    </li>
-                    
-                    <?php
-                        getCategories();
-                    ?>
-                </ul>
-            </div>
-        </div>
+        
 
 
         <!-- last child -->
         <!-- include footer -->
         <?php
-            include('includes/footer.php');
+            include('../includes/footer.php');
         ?>
     </div>
 
