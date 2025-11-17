@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ecommerce Website using PHP and MySql</title>
+    <title>Ecommerce Website - user profile</title>
 
     <!--  bootstrap css link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
@@ -20,6 +20,15 @@
 
     <!-- css file -->
     <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .profile_image{
+            width: 90%;
+            object-fit:contain;
+            margin:auto;
+            display:block;
+        }
+    </style>
 </head>
 <body>
     <!-- nav bar -->
@@ -27,7 +36,7 @@
         <!-- first child -->
         <nav class="navbar navbar-expand-lg navbar-liht bg-info">
             <div class="container-fluid">
-                <img src="./images/pngtree-colorful-shopping-cart-logo-vector-png-image_6969977.png" alt="" class="logo">
+                <img src="../images/pngtree-colorful-shopping-cart-logo-vector-png-image_6969977.png" alt="" class="logo">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +49,7 @@
                                 <a class="nav-link" href="../display_all.php">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="profile.php">My Account</a>
+                                <a class="nav-link " href="profile.php">My Account</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contacts</a>
@@ -109,10 +118,15 @@
 
         <!-- fourth child -->
         <div class="row">
-            <div class="col-md-2 p-0">
-                    <ul class="navbar-nav bg-secondary text-center">
+            <div class="col-md-2">
+                    <ul class="navbar-nav bg-secondary text-center" style="height:100vh">
                         <li class="nav-item bg-info"><a class="nav-link text-light" href="#"><h4>Your Profile</h4></a></li>
-                        <li class="nav-item bg-info"><img src="../images/apple1.jpg" alt=""></li>
+                        <li class="nav-item  "><img src="../images/apple1.jpg" class="profile_image my-4" alt=""></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="#">Pending Orders</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="#">Edit Account</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="#">My Orders</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="#">Delete Account</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="#">Logout</a></li>
                     </ul>
             </div>
             <div class="col-md-10"></div>
