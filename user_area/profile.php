@@ -131,11 +131,11 @@
                                 <li class='nav-item'><img src='./user_images/$user_img' class='profile_image my-4' alt=''></li>
                             ";
                         ?>
-                        <li class="nav-item "><a class="nav-link text-light" href="#">Pending Orders</a></li>
-                        <li class="nav-item "><a class="nav-link text-light" href="#">Edit Account</a></li>
-                        <li class="nav-item "><a class="nav-link text-light" href="#">My Orders</a></li>
-                        <li class="nav-item "><a class="nav-link text-light" href="#">Delete Account</a></li>
-                        <li class="nav-item "><a class="nav-link text-light" href="#">Logout</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="profile.php">Pending Orders</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="profile.php?edit_account">Edit Account</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="profile.php?my_orders">My Orders</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="profile.php?delete_account">Delete Account</a></li>
+                        <li class="nav-item "><a class="nav-link text-light" href="user_logout.php">Logout</a></li>
                     </ul>
             </div>
             <div class="col-md-10"></div>
