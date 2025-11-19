@@ -123,10 +123,14 @@
                         <li class="nav-item bg-info"><a class="nav-link text-light" href="#"><h4>Your Profile</h4></a></li>
                         <?php
                             $username = $_SESSION['username'];
-                            $user_img = "SELECT * FROM user_table WHERE user_name = $username";
-                            $result_img = mysqli_query($con, $user_img);
+                            $user_img_query = "SELECT * FROM user_table WHERE user_name = '$username'";
+                            $result_img = mysqli_query($con, $user_img_query);
+                            $row_img = mysqli_fetch_array($result_img);
+                            $user_img = $row_img['user_image'];
+                            echo "
+                                <li class='nav-item'><img src='./user_images/$user_img' class='profile_image my-4' alt=''></li>
+                            ";
                         ?>
-                        <li class="nav-item  "><img src="../images/apple1.jpg" class="profile_image my-4" alt=""></li>
                         <li class="nav-item "><a class="nav-link text-light" href="#">Pending Orders</a></li>
                         <li class="nav-item "><a class="nav-link text-light" href="#">Edit Account</a></li>
                         <li class="nav-item "><a class="nav-link text-light" href="#">My Orders</a></li>
