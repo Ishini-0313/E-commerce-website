@@ -121,6 +121,11 @@
             <div class="col-md-2">
                     <ul class="navbar-nav bg-secondary text-center" style="height:100vh">
                         <li class="nav-item bg-info"><a class="nav-link text-light" href="#"><h4>Your Profile</h4></a></li>
+                        <?php
+                            $username = $_SESSION['username'];
+                            $user_img = "SELECT * FROM user_table WHERE user_name = $username";
+                            $result_img = mysqli_query($con, $user_img);
+                        ?>
                         <li class="nav-item  "><img src="../images/apple1.jpg" class="profile_image my-4" alt=""></li>
                         <li class="nav-item "><a class="nav-link text-light" href="#">Pending Orders</a></li>
                         <li class="nav-item "><a class="nav-link text-light" href="#">Edit Account</a></li>
