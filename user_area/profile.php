@@ -138,7 +138,11 @@
                         <li class="nav-item "><a class="nav-link text-light" href="user_logout.php">Logout</a></li>
                     </ul>
             </div>
-            <div class="col-md-10"></div>
+            <div class="col-md-10">
+                <?php
+                    get_user_order_details();
+                ?>
+            </div>
         </div>
 
 
