@@ -376,4 +376,27 @@
         }
         echo $total_price;
     }
+
+    //get user order details
+    function get_user_order_details(){
+        global $con;
+        $username = $_SESSION['username'];
+        $get_details = "SELECT * FROM user_table WHERE user_name = '$username'";
+        $result_qry = mysqli_query($con, $get_details);
+        while($row_query = mysqli_fetch_array($result_qry)){
+            $user_id = $row_query['user_id'];
+            if(!isset($_GET['edit_account'])){
+                if(!isset($_GET['my_orders'])){
+                    if(!isset($_GET['delete_account'])){
+                        $get_orders = "SELECT * FROM user_orders WHERE user_id = '$user_id' AND order_status = 'pending'";
+                        $result_orders_qry = mysqli_query($con, $get_orders);
+                        $row_count = mysqli_num_rows($result_orders_qry);
+                        if($row_count>0){
+                            echo "<h3 class='text-center'>You have <span class='text-danger'>$row_count</span>pending orders</h3>";
+                        }
+                    }
+                }
+            }
+        }
+    }
 ?>
