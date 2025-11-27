@@ -1,3 +1,9 @@
+<?php
+    include("../includes/connect.php");
+    include("../functions/common_function.php");
+    include("../includes/footer.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +61,7 @@
                 <div class="button text-center">
                     <!-- button*10>a.nav-link.text-light.bg-info.my-1 -->
                     <button class="my-3"><a href="insert_products.php" class="nav-link text-light bg-info my-1">Insert Products</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">View products</a></button>
+                    <button><a href="index.php?view_products" class="nav-link text-light bg-info my-1">View products</a></button>
                     <button><a href="index.php?insert_category" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
                     <button><a href="" class="nav-link text-light bg-info my-1">View Categories</a></button>
                     <button><a href="index.php?insert_brand" class="nav-link text-light bg-info my-1">Insert Brands</a></button>
