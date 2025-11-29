@@ -1,7 +1,7 @@
 <?php
     include("../includes/connect.php");
     include("../functions/common_function.php");
-    include("../includes/footer.php");
+    
 ?>
 
 <!DOCTYPE html>
@@ -86,12 +86,14 @@
             ?>
         </div>
 
+        <?php
+            include("../includes/footer.php");
+        ?>
+
 
     </div>
 
-    <div class="bg-info p-3 text-center footer">
-            <p>All rights reserved &copy Designed by Ishini-2025</p>
-         </div>
+    
 
     <!-- bootstrap js link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
